@@ -9,3 +9,14 @@ Get more insights from your test results using robotframework-reporty
 - Automatically save the results in the database
 - Use a free API version of Grafana or any other available option
 - Create a new command prompt to run a local host server
+
+
+<!-- 
+we need to install this first!
+
+
+pip install streamlit
+
+pip install st-pages
+
+-->
