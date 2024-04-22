@@ -19,4 +19,6 @@ pip install streamlit
 
 pip install st-pages
 
+pipi instll robotframework
+
 -->
