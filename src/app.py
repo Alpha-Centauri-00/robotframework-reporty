@@ -32,18 +32,14 @@ class App(baseApp):
 
 
         with tab1:
-            new_name = self.create_text_input("Enter Database Name: ")
-            
+                        
             if self.create_button("Create DB"):
-                if new_name:
+                
                                     
-                    self.create_toast("New Database successfully created!")
+                self.create_toast("New Database successfully created!")
 
-                    db.create_new_db("test.db")
-                    self.create_switch_pages("pages/page1.py")
-
-                else:
-                    self.create_warning("Plase enter a database name")
+                db.create_new_db("test.db")
+                self.create_switch_pages("pages/page1.py")
 
         with tab2:
             current_dir = os.getcwd()
