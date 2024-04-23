@@ -18,12 +18,20 @@ class page1(baseApp):
         navigation.make_sidebar()
         self.create_write("# test results! Reporty")
         
-        ## Metric
-        self.create_metric("Test results","100","5")
-
         xml = self.create_text_input("Load xml-Results",".xml file path e.g. ../full-path/results/output.xml")
         if xml:
             test_result = xml_parser.TestResult(xml)
+            ## Metric
+            col1, col2, col3, col4 = self.create_columns(4)
+            with col1:
+                self.create_metric("Test results","Pass",f"{ test_result.passed }")
+            with col2:
+                self.create_metric("Test results","Failed",f"{ -test_result.failed }")
+            with col3:
+                self.create_metric("Test results","Skipped",f"{ test_result.skipped }",delta_color="off")  
+            with col4:
+                self.create_metric("Test results","Total",f"{ test_result.total }",delta_color="off")
+
             self.create_dataframe(
                 {
                 "Test Name": test_result.testsuite_names,

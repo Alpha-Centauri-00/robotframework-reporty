@@ -51,8 +51,8 @@ class baseApp:
     def create_file_uploader(self,label,type):
         return st.file_uploader(label,type)
     
-    def create_metric(self,label,values,delta):
-        return st.metric(label,values,delta)
+    def create_metric(self,label,values,delta,delta_color = "normal"):
+        return st.metric(label,values,delta,delta_color)
     
     def create_dataframe(self,data,width,height,container_width):
         return st.dataframe(data,width=width,height=height,use_container_width=container_width)
@@ -62,6 +62,9 @@ class baseApp:
         
     def create_session_state(self):
         return st.session_state
+    
+    def create_columns(self, num_columns):
+        return st.columns(num_columns)
     
     def create_rerun(self):
         return st.rerun()
