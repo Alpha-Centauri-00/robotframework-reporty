@@ -60,14 +60,17 @@ class baseApp:
     def create_success(self,message):
         return st.success(message)
         
-    def create_session_state(self):
-        return st.session_state
-    
     def create_columns(self, num_columns):
         return st.columns(num_columns)
     
     def create_rerun(self):
         return st.rerun()
+    
+    def create_date_input(self, label, value):
+        return st.date_input(label, value)
+    
+    def create_session_state(self):
+        return st.session_state
     
     def get_session_state(self,val,key):
         return st.session_state.get(val,key)
