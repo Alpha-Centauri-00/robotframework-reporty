@@ -80,6 +80,12 @@ def save_test_results_to_db(db_name,data):
                             VALUES (?, ?, ?, ?)''', 
                         (data.testsuite_names[i], data.testcase_names[i], 
                         data.testcases_status[i], data.testcases_elapsed[i]))
+            
+        cursor.execute('''INSERT INTO total_test_results 
+                            (passed, failed, skipped, total) 
+                            VALUES (?, ?, ?, ?)''', 
+                        (data.passed, data.failed, 
+                        data.skipped, data.total))
 
         conn.commit()
 

@@ -21,7 +21,7 @@ class page1(baseApp):
         ## Metric
         self.create_metric("Test results","100","5")
 
-        xml = self.create_text_input("Load xml-Results",".xml file path e.g. results/output.xml")
+        xml = self.create_text_input("Load xml-Results",".xml file path e.g. ../full-path/results/output.xml")
         if xml:
             test_result = xml_parser.TestResult(xml)
             self.create_dataframe(
