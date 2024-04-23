@@ -3,28 +3,29 @@ Get more insights from your test results using robotframework-reporty
 
 ## Project Ideas
 
-○ **Local Database with SQLite3**: 
+**Local Database with SQLite3**: 
 - Implement a local database using [SQLite3](https://docs.python.org/3/library/sqlite3.html#) to store test results.
 
-○ **Save Test Result automatically**: 
-- Create a listener to automatically save test results while running robot tests
+**Save Test Result automatically**: 
+- Create a listener to automatically save test results while running robot tests (NOT IMPLEMENTED YET)
 
-○ **Parsing output.xml**: 
+**Parsing output.xml**: 
 - Leverage the capabilities of `robot.api` to parse the Output.xml file to store the results in a local SQLite3 database.
 
-○ **Dashboard with Streamlit**: 
+**Dashboard with Streamlit**: 
 - Using [Streamlit](https://streamlit.io/) to create a web-based dashboard for visualizing and analyzing test results.
 
-○ **Server Setup**: 
+**Server Setup**: 
 - Implement a command-line interface to easily run a local host server, providing Test results.
 
-○ **Installation Process**: 
-- Simplify the setup process with a single `pip install robotframework-reporty` command.
+**Installation Process**: 
+- Simplify the setup process with a single `pip install robotframework-reporty` command.(NOT IMPLEMENTED YET)
 
-○ **Built-in Database**: 
+**Built-in Database**: 
 - Benefit from SQLite3 being a part of Python's standard library, eliminating the need for additional database installations.
 
-# Setup
+**Cross-Platform**:
+- Ensure that `robotframework-reporty` works seamlessly on different operating systems such as Windows, macOS, and Linux.
 
 ## Installation
 
@@ -35,8 +36,12 @@ Before installing the required packages, it's recommended to set up a virtual en
 Open a terminal or command prompt and navigate to your project directory. Then, run the following command to create a virtual environment named `.venv`:
 
 ```bash
+# On macOS/Linux
+python3 -m venv .venv
+
 # On Windows
 python -m venv .venv
+
 ```
 
 To install the required packages, you can use `pip` with the provided `requirements.txt` file.
