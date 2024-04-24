@@ -1,3 +1,3 @@
-streamlit
-st-pages
-robotframework
+streamlit==1.33.0
+st-pages==0.4.5
+robotframework==7.0
