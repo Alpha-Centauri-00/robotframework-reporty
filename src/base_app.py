@@ -63,6 +63,18 @@ class baseApp:
     def create_columns(self, num_columns):
         return st.columns(num_columns)
     
+    @st.experimental_dialog("Save to Database")
+    def save_to_the_database(self,callable, *args, **kwargs):
+        st.write("Are you sure you want to save to the database?")
+        yes_clicked = st.button("Yes")
+        no_clicked = st.button("No")
+
+        if yes_clicked:
+            callable(*args, **kwargs)
+            st.rerun()
+        if no_clicked:
+            st.rerun()
+    
     def create_rerun(self):
         return st.rerun()
     

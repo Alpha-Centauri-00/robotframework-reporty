@@ -46,10 +46,7 @@ class page1(baseApp):
                     container_width=True
                 )
                 if test_result and self.create_button("Save To DB"):
-
-
-                    self.on_save_to_db_clicked("test.db", test_result)
-                    self.create_toast("Test results saved to database successfully.")
+                    self.save_to_the_database(lambda: self.on_save_to_db_clicked("test.db", test_result))
 
                 
             else:
