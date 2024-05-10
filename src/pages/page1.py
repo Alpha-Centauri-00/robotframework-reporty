@@ -1,5 +1,4 @@
-from base_app import baseApp
-from navigation import Navi
+from base_app import baseApp, Navi
 import data_base as data_base
 import xml_parser as xml_parser
 from robot.errors import DataError

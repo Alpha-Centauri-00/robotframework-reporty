@@ -1,5 +1,4 @@
-from base_app import baseApp
-from navigation import Navi
+from base_app import baseApp, Navi
 import datetime
 
 class page2(baseApp):
