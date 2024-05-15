@@ -13,6 +13,8 @@ class TestResult:
     testsuite_names: List[str] = field(init=False, default_factory=list)
     testcases_status: List[str] = field(init=False, default_factory=list)
     testcases_elapsed: List[float] = field(init=False, default_factory=list)
+    start_time: List[str] = field(init=False,default_factory=list)      #new
+    start_date: List[str] = field(init=False,default_factory=list)      #new
 
     def __post_init__(self):
         result = ExecutionResult(self.xml_path)
@@ -21,6 +23,8 @@ class TestResult:
         self.failed = stats.failed
         self.skipped = stats.skipped
         self.total = stats.total
+        self.start_time = result.suite.start_time.time().replace(microsecond=0)
+        self.start_date = result.suite.start_time.date()
 
         root_suite = result.suite
         for test in root_suite.all_tests:
