@@ -23,8 +23,8 @@ class TestResult:
         self.failed = stats.failed
         self.skipped = stats.skipped
         self.total = stats.total
-        self.start_time = result.suite.start_time.time().replace(microsecond=0)
-        self.start_date = result.suite.start_time.date()
+        self.start_time = result.suite.start_time.time().replace(microsecond=0).strftime('%H:%M:%S')
+        self.start_date = result.suite.start_time.date().strftime('%Y-%m-%d')
 
         root_suite = result.suite
         for test in root_suite.all_tests:

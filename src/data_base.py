@@ -25,6 +25,8 @@ def create_new_db(db_name):
                             test_suite_name TEXT,
                             test_case_name TEXT,
                             test_case_status TEXT,
+                            time TEXT,
+                            date TEXT,
                             test_case_elapsed_time REAL
                         )''')
         
@@ -70,16 +72,18 @@ def save_test_results_to_db(db_name,data):
                             test_suite_name TEXT,
                             test_case_name TEXT,
                             test_case_status TEXT,
+                            time TEXT,
+                            date TEXT,
                             test_case_elapsed_time REAL
                         )''')
         
         # Insert data into the table
         for i in range(len(data.testcase_names)):
             cursor.execute('''INSERT INTO test_results 
-                            (test_suite_name, test_case_name, test_case_status, test_case_elapsed_time) 
-                            VALUES (?, ?, ?, ?)''', 
+                            (test_suite_name, test_case_name, test_case_status, time, date, test_case_elapsed_time) 
+                            VALUES (?, ?, ?, ?, ?, ?)''', 
                         (data.testsuite_names[i], data.testcase_names[i], 
-                        data.testcases_status[i], data.testcases_elapsed[i]))
+                        data.testcases_status[i],data.start_time,data.start_date, data.testcases_elapsed[i]))
             
         cursor.execute('''INSERT INTO total_test_results 
                             (passed, failed, skipped, total) 
