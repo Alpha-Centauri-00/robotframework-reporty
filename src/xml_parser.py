@@ -1,6 +1,7 @@
 from typing import List
 from robot.api import ExecutionResult
 from dataclasses import dataclass, field
+from datetime import datetime
 
 @dataclass
 class TestResult:
@@ -23,12 +24,14 @@ class TestResult:
         self.failed = stats.failed
         self.skipped = stats.skipped
         self.total = stats.total
-        self.start_time = result.suite.start_time.time().replace(microsecond=0).strftime('%H:%M:%S')
-        self.start_date = result.suite.start_time.date().strftime('%Y-%m-%d')
-
+        
         root_suite = result.suite
         for test in root_suite.all_tests:
             self.testcase_names.append(test.name)
             self.testsuite_names.append(test.parent.name)
             self.testcases_status.append(test.status)
             self.testcases_elapsed.append(test.elapsed_time.total_seconds())
+            start_time_str = test.starttime
+            start_time_datetime = datetime.strptime(start_time_str, '%Y%m%d %H:%M:%S.%f')
+            self.start_time.append(start_time_datetime.time().strftime('%H:%M:%S.%f'))
+            self.start_date.append(start_time_datetime.date().strftime('%Y-%m-%d'))
