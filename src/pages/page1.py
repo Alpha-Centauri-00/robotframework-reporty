@@ -38,6 +38,8 @@ class page1(baseApp):
                     "Test Name": test_result.testsuite_names,
                     "Test Case Name": test_result.testcase_names,
                     "Status": test_result.testcases_status,
+                    "Date": test_result.start_date,
+                    "Time": test_result.start_time,
                     "Elapsed": test_result.testcases_elapsed
                     },
                     width=400,
@@ -60,6 +62,8 @@ class page1(baseApp):
                                 "Test Name": data_base.load_db_file("test.db").execute("SELECT test_suite_name FROM test_results").fetchall(),
                                 "Test Case Name": data_base.load_db_file("test.db").execute("SELECT test_case_name FROM test_results").fetchall(),
                                 "Status": data_base.load_db_file("test.db").execute("SELECT test_case_status FROM test_results").fetchall(),
+                                "Date": data_base.load_db_file("test.db").execute("SELECT date FROM test_results").fetchall(),
+                                "Time": data_base.load_db_file("test.db").execute("SELECT time FROM test_results").fetchall(),
                                 "Elapsed": data_base.load_db_file("test.db").execute("SELECT test_case_elapsed_time FROM test_results").fetchall()
                             },
                             width=400,
