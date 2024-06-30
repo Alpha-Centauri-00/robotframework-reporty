@@ -11,6 +11,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
+duckdb = "^1.0.0"
 
 
 [build-system]
