@@ -1,5 +1,7 @@
 import duckdb
 
+DATABASE_NAME = 'test.duckdb'
+
 def create_sequence(cursor, sequence_name):
     try:
         cursor.execute(f'CREATE SEQUENCE {sequence_name} START 1')

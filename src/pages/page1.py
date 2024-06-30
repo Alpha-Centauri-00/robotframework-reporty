@@ -69,7 +69,7 @@ class page1(baseApp):
                     container_width=True
                 )
                 if test_result and self.create_button("Save To DB"):
-                    self.save_to_the_database(lambda: self.on_save_to_db_clicked("test.duckdb", test_result))
+                    self.save_to_the_database(lambda: self.on_save_to_db_clicked(data_base.DATABASE_NAME, test_result))
                 # Display parsed XML data here as previously outlined...
 
             else:
@@ -78,7 +78,7 @@ class page1(baseApp):
                 db_files = [file for file in os.listdir(current_dir) if file.endswith(".duckdb")]
                 if db_files:
                     with self.create_spinner("Loading data..."):
-                        results = self.fetch_data("test.duckdb")
+                        results = self.fetch_data(data_base.DATABASE_NAME)
                         if results:
                             self.create_dataframe(results, width=400, height=400, container_width=True)
                 else:

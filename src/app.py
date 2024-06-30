@@ -38,7 +38,7 @@ class App(baseApp):
                                     
                 self.create_toast("New Database successfully created!")
 
-                db.create_new_db("test.duckdb")
+                db.create_new_db(db.DATABASE_NAME)
                 self.create_switch_pages("pages/page1.py")
 
         with tab2:
