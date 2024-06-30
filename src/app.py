@@ -38,12 +38,12 @@ class App(baseApp):
                                     
                 self.create_toast("New Database successfully created!")
 
-                db.create_new_db("test.db")
+                db.create_new_db("test.duckdb")
                 self.create_switch_pages("pages/page1.py")
 
         with tab2:
             current_dir = os.getcwd()
-            db_files = [file for file in os.listdir(current_dir) if file.endswith(".db")]
+            db_files = [file for file in os.listdir(current_dir) if file.endswith(".duckdb")]
 
             if db_files:
                 selected_db = self.create_selection("Select Database: ", db_files)
